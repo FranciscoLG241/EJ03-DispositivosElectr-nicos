@@ -1,4 +1,4 @@
-class Telefono: EncendidoApagado, DispositivoElectronico {
+class Telefono(val marca: String = "Desconocido" , val modelo: String = "Desconocido"): EncendidoApagado, DispositivoElectronico {
     private var encendido = false
 
     override fun apagar() {
@@ -25,5 +25,10 @@ class Telefono: EncendidoApagado, DispositivoElectronico {
         }else{
             println("El teléfono está apagado. Enciéndelo primero")
         }
+    }
+
+
+    override fun toString(): String {
+        return "El teléfono es de la marca: $marca y de modelo: $modelo"
     }
 }

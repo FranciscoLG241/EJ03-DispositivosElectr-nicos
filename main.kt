@@ -2,6 +2,17 @@
 
 fun main(){
 
+
+    val telefono1 = Telefono("Xiami", "Redmi Note")
+    val lavadora1 = Lavadora("NoMeSeMarcasDeLavadoras", "89S")
+    val coche1 = Coche("Ford", "Focus")
+
+    println("\n******************")
+
+    println(telefono1)
+    println(lavadora1)
+    println(coche1)
+
     println("\n******************")
 
     val telefono = Telefono()

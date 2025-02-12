@@ -1,6 +1,6 @@
-class Coche: EncendidoApagado, Vehiculo{
+class Coche(val marca: String = "Desconocido" , val modelo: String = "Desconocido"): EncendidoApagado, Vehiculo{
     override var motorEncendido: Boolean = false
-    override val kmHora: Int = 0
+    override var kmHora: Int = 0
 
 
     override fun encender() {
@@ -21,18 +21,25 @@ class Coche: EncendidoApagado, Vehiculo{
 
     override fun acelerar(velocidad: Int) {
         if (!motorEncendido){
-            motorEncendido = true
-            println("El coche está acelerando")
+            kmHora += velocidad
         }
     }
 
 
     override fun frenar(velocidad: Int) {
         if (motorEncendido){
-            motorEncendido = false
-            println("El coche está frenando")
+            kmHora -= velocidad
+            if (kmHora < 0){
+                kmHora = 0
+            }
         }
     }
+
+    override fun toString(): String {
+        return "El coche es de la marca: $marca y de modelo: $modelo"
+    }
+
+
 }
 
 
